@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">GrabilityTest</string>
+    <string name="app_name">Top Free Apps</string>
+    <string name="title_activity_start">StartActivity</string>
 </resources>
