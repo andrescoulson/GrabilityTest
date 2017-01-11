@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         ViewCompat.animate(textView)
-                .translationY(-280)
+                .translationY(-200)
                 .setStartDelay(STARTUP_DELAY)
                 .setDuration(ANIM_ITEM_DURATION).setInterpolator(
                 new DecelerateInterpolator(1.2f)).start();
