@@ -20,9 +20,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".StartActivity"
+            android:name=".ui.StartActivity"
             android:label="@string/title_activity_start"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
 
         <receiver
             android:name=".utils.ConnectivityReceiver"
@@ -31,6 +31,8 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".ui.CategoriesActivity"></activity>
     </application>
 
 </manifest>

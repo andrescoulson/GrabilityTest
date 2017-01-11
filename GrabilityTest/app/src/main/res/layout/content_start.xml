@@ -6,7 +6,7 @@
     android:background="@android:color/white"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.acoulson.grabilitytest.StartActivity"
+    tools:context="com.acoulson.grabilitytest.ui.StartActivity"
     tools:showIn="@layout/activity_start">
     
     <android.support.v7.widget.RecyclerView

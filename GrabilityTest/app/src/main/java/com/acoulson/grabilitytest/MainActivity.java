@@ -2,12 +2,14 @@ package com.acoulson.grabilitytest;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Bundle;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.acoulson.grabilitytest.ui.StartActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -51,12 +53,10 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
 
 
-
                 startActivity(new Intent(MainActivity.this, StartActivity.class));
                 finish();
 
             }
-
 
 
         };
@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         timer.schedule(task, SPLASH_SCREEN_DELAY);
 
     }
-
 
 
 }
