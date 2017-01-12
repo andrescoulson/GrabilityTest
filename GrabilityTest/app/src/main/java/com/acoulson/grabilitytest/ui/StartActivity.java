@@ -50,39 +50,7 @@ public class StartActivity extends AppCompatActivity {
 
     private void getApps() {
 
-        AsyncHttpClient client = new AsyncHttpClient();
 
-        client.get("https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json", new AsyncHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-
-                try {
-                    JSONObject jsonObject = new JSONObject(new String(responseBody));
-                    Type founderListType = new TypeToken<ArrayList<AppEntity>>(){}.getType();
-
-                    Gson gson = new Gson();
-                    Log.e("Entry", jsonObject.getJSONObject("feed").getJSONArray("entry").toString());
-                    List<AppEntity> appEntities = gson.fromJson(jsonObject.getJSONObject("feed").getJSONArray("entry").toString(), founderListType);
-
-
-                    for (AppEntity a : appEntities) {
-
-                        Log.e("name", a.getName());
-                        Log.e("rights", a.getRights());
-                        Log.e("title", a.getTitle());
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
-                Log.e("JSON", new String(responseBody));
-            }
-        });
     }
 
 }

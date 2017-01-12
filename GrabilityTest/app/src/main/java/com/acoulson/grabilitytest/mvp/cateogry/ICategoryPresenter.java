@@ -5,4 +5,8 @@ package com.acoulson.grabilitytest.mvp.cateogry;
  */
 
 public interface ICategoryPresenter {
+
+    public void getListCategory();
+
+    public void mostrarCategoriasRV();
 }

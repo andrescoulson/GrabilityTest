@@ -21,6 +21,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -36,7 +40,7 @@ dependencies {
     compile 'com.mikhaellopez:circularimageview:3.0.2'
     compile 'com.github.siyamed:android-shape-imageview:0.9.3'
     compile 'com.github.developer-shivam:Diagonalify:1.1'
-    compile 'net.eunjae.android.modelmapper:ModelMapper:1.0.6'
+    compile 'com.github.nitrico.fontbinder:fontbinder:1.0.4'
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.liuguangqiang.ripplelayout:library:0.1.0'
     compile 'me.wangyuwei:ParticleView:1.0.4'

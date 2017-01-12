@@ -70,8 +70,8 @@ public class AppEntity {
         return artist;
     }
 
-    public Category getCategory() {
-        return category;
+    public String getCategory() {
+        return category.atributesCategory.getLabel();
     }
 
     public ReleaseDate getReleaseDate() {
@@ -79,7 +79,7 @@ public class AppEntity {
     }
 }
 
-    class Name {
+class Name {
     @SerializedName("label")
     String name;
 
@@ -324,6 +324,7 @@ class Image {
     String url;
     @SerializedName("attributes")
     AtributesImage atributesImage;
+
 
     public String getUrl() {
         return url;

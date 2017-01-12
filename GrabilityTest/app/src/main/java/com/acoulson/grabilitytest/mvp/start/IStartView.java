@@ -17,9 +17,4 @@ public interface IStartView {
 
     public void goToDetailActivity(AppEntity image);
 
-    public void showList();
-
-    public void hideList();
-
-    public void showMessage(String message);
 }
