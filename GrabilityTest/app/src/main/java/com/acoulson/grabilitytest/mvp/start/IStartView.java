@@ -11,10 +11,13 @@ import java.util.List;
 
 public interface IStartView {
 
-    public void createList(List<AppEntity> images);
+    public void generarLinearLayout();
 
-    public ItemAppRecyclerAdapter createImageAdapter(List<AppEntity> images);
+    public void showTitle(String title);
 
-    public void goToDetailActivity(AppEntity image);
+    public ItemAppRecyclerAdapter crearAdapter(List<AppEntity> appEntities);
+
+    public void inicializarAdapter(ItemAppRecyclerAdapter appRecyclerAdapter);
+
 
 }

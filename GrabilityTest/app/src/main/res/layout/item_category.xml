@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        app:cardElevation="10dp"
+        app:cardElevation="1dp"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -19,11 +19,11 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:font='@{"comedyshow"}'
+                android:font='@{"Walk_this_way"}'
                 android:textAllCaps="true"
-                android:layout_margin="10dp"
+                android:layout_margin="20dp"
                 android:textColor="@color/asd"
-                android:textSize="24dp" />
+                android:textSize="25dp" />
 
         </RelativeLayout>
 

@@ -28,23 +28,7 @@ public class MyPreferenceManager {
         editor = pref.edit();
     }
 
-    public void StoreApps(AppsJson usuario) {
-        editor.putString(KEY_CATEGORIES, usuario.getCategorias());
-        editor.putString(KEY_APPS, usuario.getApps());
-        editor.commit();
-    }
 
-    public AppsJson getUser() {
-        if (pref.getString(KEY_APPS, null) != null) {
-            String apps, categoires;
-            apps = pref.getString(KEY_APPS, null);
-            categoires = pref.getString(KEY_CATEGORIES, null);
-
-            AppsJson user = new AppsJson(categoires, apps);
-            return user;
-        }
-        return null;
-    }
 
     public void clear(){
 

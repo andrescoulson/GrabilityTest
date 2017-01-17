@@ -1,9 +1,10 @@
-package com.acoulson.grabilitytest.mvp.cateogry;
+package com.acoulson.grabilitytest.mvp.start;
 
 import android.content.Context;
 import android.util.Log;
 
 import com.acoulson.grabilitytest.Entity.AppEntity;
+import com.acoulson.grabilitytest.mvp.cateogry.ICategoryView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpClient;
@@ -19,24 +20,27 @@ import java.util.List;
 import cz.msebera.android.httpclient.Header;
 
 /**
- * Created by acoulson on 11/01/17.
+ * Created by Andres on 16/01/2017.
  */
 
-public class CategoryPresenter implements ICategoryPresenter {
+public class StartPresenter implements IStartPresenter {
 
-    ICategoryView iCategoryView;
+    IStartView iStartView;
     Context context;
-    List<AppEntity> appEntities;
-    List<String> categoryLis = new ArrayList<String>();
+    String title;
+    List<AppEntity> appEntities = new ArrayList<>();
+    List<AppEntity> entityList = new ArrayList<>();
 
-    public CategoryPresenter(ICategoryView iCategoryView, Context context) {
-        this.iCategoryView = iCategoryView;
+    public StartPresenter(IStartView iStartView, Context context, String title) {
+        this.iStartView = iStartView;
         this.context = context;
-        getListCategory();
+        this.title = title;
+        mostrarTitle();
+        getListApps();
     }
 
     @Override
-    public void getListCategory() {
+    public void getListApps() {
         AsyncHttpClient client = new AsyncHttpClient();
 
         client.get("https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json", new AsyncHttpResponseHandler() {
@@ -45,23 +49,15 @@ public class CategoryPresenter implements ICategoryPresenter {
 
                 try {
                     JSONObject jsonObject = new JSONObject(new String(responseBody));
-                    Type founderListType = new TypeToken<ArrayList<AppEntity>>() {}.getType();
+                    Type founderListType = new TypeToken<ArrayList<AppEntity>>() {
+                    }.getType();
                     Gson gson = new Gson();
                     appEntities = gson.fromJson(jsonObject.getJSONObject("feed").getJSONArray("entry").toString(), founderListType);
 
 
                     for (AppEntity a : appEntities) {
-                        boolean esta = false;
-                        for (String s : categoryLis) {
-
-                            if (s.equals(a.getCategory().getAtributesCategory().getLabel())) {
-                                esta = true;
-                                break;
-                            }
-                        }
-
-                        if (!esta)
-                            categoryLis.add(a.getCategory().getAtributesCategory().getLabel());
+                        if (a.getCategory().getAtributesCategory().getLabel().equals(title))
+                            entityList.add(a);
                     }
 
                     mostrarCategoriasRV();
@@ -78,11 +74,17 @@ public class CategoryPresenter implements ICategoryPresenter {
             }
         });
 
+
     }
 
     @Override
     public void mostrarCategoriasRV() {
-        iCategoryView.generarLinearLayout();
-        iCategoryView.inicializarAdapter(iCategoryView.crearAdapter(categoryLis));
+        iStartView.generarLinearLayout();
+        iStartView.inicializarAdapter(iStartView.crearAdapter(entityList));
+    }
+
+    @Override
+    public void mostrarTitle() {
+        iStartView.showTitle(title);
     }
 }

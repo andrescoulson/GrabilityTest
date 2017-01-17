@@ -9,6 +9,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.acoulson.grabilitytest.ui.CategoriesActivity;
 import com.acoulson.grabilitytest.ui.StartActivity;
 
 import java.util.Timer;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
 
 
-                startActivity(new Intent(MainActivity.this, StartActivity.class));
+                startActivity(new Intent(MainActivity.this, CategoriesActivity.class));
                 finish();
 
             }

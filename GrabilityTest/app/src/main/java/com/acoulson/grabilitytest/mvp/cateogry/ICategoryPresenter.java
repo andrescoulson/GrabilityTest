@@ -9,4 +9,8 @@ public interface ICategoryPresenter {
     public void getListCategory();
 
     public void mostrarCategoriasRV();
+
+
+
+
 }
