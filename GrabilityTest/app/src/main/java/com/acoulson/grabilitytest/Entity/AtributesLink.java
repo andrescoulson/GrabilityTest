@@ -2,7 +2,9 @@ package com.acoulson.grabilitytest.Entity;
 
 import com.google.gson.annotations.SerializedName;
 
-public class AtributesLink {
+import java.io.Serializable;
+
+public class AtributesLink implements Serializable {
 @SerializedName("rel")
 String rel;
 @SerializedName("type")

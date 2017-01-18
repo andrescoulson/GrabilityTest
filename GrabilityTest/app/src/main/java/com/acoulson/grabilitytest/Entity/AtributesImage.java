@@ -2,7 +2,9 @@ package com.acoulson.grabilitytest.Entity;
 
 import com.google.gson.annotations.SerializedName;
 
-public class AtributesImage {
+import java.io.Serializable;
+
+public class AtributesImage implements Serializable {
 @SerializedName("height")
 String height;
 

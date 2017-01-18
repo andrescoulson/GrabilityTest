@@ -2,7 +2,9 @@ package com.acoulson.grabilitytest.Entity;
 
 import com.google.gson.annotations.SerializedName;
 
-public class AtributesReleaseDate {
+import java.io.Serializable;
+
+public class AtributesReleaseDate implements Serializable {
     @SerializedName("label")
     String label;
 

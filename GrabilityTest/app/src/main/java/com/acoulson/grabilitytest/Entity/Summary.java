@@ -2,7 +2,9 @@ package com.acoulson.grabilitytest.Entity;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Summary {
+import java.io.Serializable;
+
+public class Summary implements Serializable {
 @SerializedName("label")
 String summary;
 

@@ -2,7 +2,9 @@ package com.acoulson.grabilitytest.Entity;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ContentType {
+import java.io.Serializable;
+
+public class ContentType implements Serializable {
 @SerializedName("attributes")
 AttributContentType attributContentType;
 

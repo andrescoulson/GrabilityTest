@@ -2,7 +2,9 @@ package com.acoulson.grabilitytest.Entity;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Price {
+import java.io.Serializable;
+
+public class Price implements Serializable {
 @SerializedName("label")
 String price;
 @SerializedName("attributes")

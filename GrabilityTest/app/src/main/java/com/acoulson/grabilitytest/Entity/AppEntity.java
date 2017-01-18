@@ -2,13 +2,14 @@ package com.acoulson.grabilitytest.Entity;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by acoulson on 11/01/17.
  */
 
-public class AppEntity {
+public class AppEntity implements Serializable{
 
     @SerializedName("im:name")
     Name name;
